@@ -41,7 +41,7 @@ const Products = () => {
         try {
         setError(false)
             setLoading(true)
-            const res=await axios.get('https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/product/getAllProducts')
+            const res=await axios.get('https://full-stacl-ecommerce.vercel.app/api/v1/product/getAllProducts')
             if(res.data.success){
                 setProduct(res.data.products)
                 dispatch(setProductData(res.data.products))

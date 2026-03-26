@@ -20,7 +20,7 @@ const Navbar = () => {
     try {
       const accessToken = localStorage.getItem('accessToken')
       const res = await axios.post(
-        'https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/logout',
+        'https://full-stacl-ecommerce.vercel.app/api/v1/user/logout',
         {},
         {
           headers: {

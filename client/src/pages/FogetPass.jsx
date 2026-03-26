@@ -31,7 +31,7 @@ const FogetPass = () => {
     try {
       setLoading(true)
       const res = await axios.post(
-        'https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/forget-password',
+        'https://full-stacl-ecommerce.vercel.app/api/v1/user/forget-password',
         { email },
         {
           headers: {

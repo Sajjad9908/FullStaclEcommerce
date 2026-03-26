@@ -27,7 +27,7 @@ export default function ReVerify() {
 
         try {
             const response = await axios.post(
-                'https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/reverify',
+                'https://full-stacl-ecommerce.vercel.app/api/v1/user/reverify',
                 { email },
                 { withCredentials: true }
             );

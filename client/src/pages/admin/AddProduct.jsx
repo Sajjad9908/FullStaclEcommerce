@@ -59,7 +59,7 @@ const AddProduct = () => {
     })
     try {
       setLoading(true)
-      const res=await axios.post(`https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/product/add`,formData,{
+      const res=await axios.post(`https://full-stacl-ecommerce.vercel.app/api/v1/product/add`,formData,{
         headers:{
           Authorization:`Bearer ${accessToken}`
         }

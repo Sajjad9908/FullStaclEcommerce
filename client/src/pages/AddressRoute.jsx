@@ -189,7 +189,7 @@ const AddressRoute = () => {
 
     try {
       const res = await axios.post(
-        'https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/orders/create',
+        'https://full-stacl-ecommerce.vercel.app/api/v1/orders/create',
         {
           paymentMethod,
           shippingAddress,
