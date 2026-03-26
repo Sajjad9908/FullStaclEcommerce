@@ -60,12 +60,13 @@ const Navbar = () => {
             <ul className='flex md:gap-7 gap-3 items-center text-xl font-semibold'>
               <Link to='/'><li>Home</li></Link>
               <Link to='/products'><li>Products</li></Link>
-              
+              {user && (
                 <>
                   <Link to={`/profile/${user._id}`}><li>{user.firstName} {user.lastName}</li></Link>
-                  <img src={user.profilePic} alt='Profile' className='h-8 w-8 rounded-full ml-2' />
-                  <Link to='/dashboard/sales'><li>Dashboard</li></Link>
+                  <img src={user.profilePic || ''} alt='Profile' className='h-8 w-8 rounded-full ml-2' />
                 </>
+              )}
+              {admin && <Link to='/dashboard/sales'><li>Dashboard</li></Link>}
            
             </ul>
             <Link to='/cart' className='relative'>
@@ -91,7 +92,7 @@ const Navbar = () => {
                 {admin && (
                   <>
                     <Link to={`/profile/${user._id}`}><li>{user.firstName} {user.lastName}</li></Link>
-                    <img src={user.profilePic} alt='Profile' className='h-8 w-8 rounded-full ml-2' />
+                    <img src={user.profilePic || ''} alt='Profile' className='h-8 w-8 rounded-full ml-2' />
                     <Link to='/dashboard/sales'><li>Dashboard</li></Link>
                   </>
                 )}
