@@ -6,7 +6,6 @@ const app=express();
 const PORT=process.env.PORT || 5000;
 import cors from 'cors';
 import Productrouter from './Routes/ProductRoute.js';
-import multer from 'multer';
 import cartRoute from './Routes/CartRoute.js';
 import orderRoute from './Routes/OrderRoute.js';
 
@@ -22,12 +21,14 @@ app.use('/api/v1/product',Productrouter)
 app.use('/api/v1/cart',cartRoute)
 app.use('/api/v1/orders',orderRoute)
 
+await connectDB();
 
+if (!process.env.VERCEL) {
+    app.listen(PORT,()=>{
+        console.log(`Server is running on http://localhost:${PORT}`);
+    })
+}
 
- await connectDB();
-
-app.listen(PORT,()=>{
-    console.log(`Server is running on http://localhost:${PORT}`);
-})
+export default app;
 
 
