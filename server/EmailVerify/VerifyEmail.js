@@ -5,6 +5,10 @@ import 'dotenv/config';
 
 export const VerifyEmail=async(token,email)=>{
 
+    if(!process.env.MAIL_USER || !process.env.MAIL_PASS){
+        throw new Error('MAIL_USER or MAIL_PASS is not configured');
+    }
+
     const frontendBaseUrl=(process.env.CLIENT_URL || 'https://full-stacl-ecommerce-vlbf.vercel.app').replace(/\/$/, '');
     const verifyUrl=`${frontendBaseUrl}/verify/${token}`;
 
@@ -23,14 +27,9 @@ const mailConfiguration={
     text:`Please click the following link to verify your email: ${verifyUrl}`
 }
 
-
-transporter.sendMail(mailConfiguration,(error,info)=>{
-    if(error){
-        console.log('Error sending email:',error);
-    }else{
-        console.log('Email sent successfully:',info.response);
-    }
-})
+    await transporter.verify();
+    const info=await transporter.sendMail(mailConfiguration);
+    console.log('Email sent successfully:',info.response);
 }
 
 

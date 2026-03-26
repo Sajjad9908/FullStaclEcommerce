@@ -34,7 +34,7 @@ export const regester=async(req,res)=>{
         })
         const token=jwt.sign({id:newUser._id},process.env.SECRET_KEY,{expiresIn:'10m'})
 
-        VerifyEmail(token,email);
+        await VerifyEmail(token,email);
         newUser.token=token;
         await newUser.save();
         console.log("User regestered successfully")
@@ -113,7 +113,7 @@ try {
         })
     }
     const token=jwt.sign({id:user._id},process.env.SECRET_KEY,{expiresIn:'10m'})
-    VerifyEmail(token,email);
+    await VerifyEmail(token,email);
     user.token=token;
     await user.save();
     return res.status(200).json({
@@ -221,7 +221,7 @@ export const forgetPassword=async(req,res)=>{
         }
         const otp=Math.floor(100000 + Math.random()*900000).toString();
         const otpExpire=new Date(Date.now()+10*60*1000);
-        OtpVerification(otp,email);
+        await OtpVerification(otp,email);
         user.otp=otp;
         user.otpExpiry=otpExpire;
         await user.save();
