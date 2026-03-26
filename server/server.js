@@ -10,7 +10,7 @@ import cartRoute from './Routes/CartRoute.js';
 import orderRoute from './Routes/OrderRoute.js';
 
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:'https://full-stacl-ecommerce-vlbf.vercel.app/',
     methods:['GET','POST','PUT','DELETE'],
     credentials:true
 }));
