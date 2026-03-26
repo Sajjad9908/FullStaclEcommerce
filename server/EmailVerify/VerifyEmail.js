@@ -18,7 +18,7 @@ const mailConfiguration={
     from:process.env.MAIL_USER,
     to:email,
     subject:'Email Verification',
-    text:`Please click the following link to verify your email: http://localhost:5173/verify/${token}`
+    text:`Please click the following link to verify your email: https://full-stacl-ecommerce.vercel.app/verify/${token}`
 }
 
 
