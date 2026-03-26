@@ -59,7 +59,7 @@ const UserInfo = () => {
           }
 
 
-          const res=await axios.put(`http://localhost:8000/api/v1/user/update/${userId}`,formData,{
+          const res=await axios.put(`https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/update/${userId}`,formData,{
             headers:{
               Authorization:`Bearer ${accessToken}`,
               'Content-Type':'multipart/form-data'
@@ -87,7 +87,7 @@ const UserInfo = () => {
   }
   const getUserDetails=async()=>{
     try {
-      const res=await axios.get(`http://localhost:8000/api/v1/user/getUser/${userId}`)
+      const res=await axios.get(`https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/getUser/${userId}`)
       if(res.data.success){
         setUpdateUser((prev)=>({
           ...prev,

@@ -80,7 +80,7 @@ const Profile = () => {
           }
 
 
-          const res=await axios.put(`http://localhost:8000/api/v1/user/update/${userId}`,formData,{
+          const res=await axios.put(`https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/update/${userId}`,formData,{
             headers:{
               Authorization:`Bearer ${accessToken}`,
               'Content-Type':'multipart/form-data'

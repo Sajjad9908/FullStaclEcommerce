@@ -57,7 +57,7 @@ const ChangePassword = () => {
     try {
       setLoading(true)
       const res = await axios.post(
-        `http://localhost:8000/api/v1/user/changePassword/${encodeURIComponent(email)}`,
+        `https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/changePassword/${encodeURIComponent(email)}`,
         {
           newPassword: formData.newPassword,
           confirmPassword: formData.confirmPassword,

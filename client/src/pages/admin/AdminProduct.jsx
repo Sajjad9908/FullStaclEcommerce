@@ -79,7 +79,7 @@ const AdminProduct = () => {
       });
     try {
       const res = await axios.put(
-        `http://localhost:8000/api/v1/updateProduct/${editProduct._id}`,
+        `https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/updateProduct/${editProduct._id}`,
         formData,
         {
           headers: {
@@ -106,7 +106,7 @@ const AdminProduct = () => {
         (product) => product._id !== productId,
       );
       const res = await axios.delete(
-        `http://localhost:8000/api/v1/product/deleteProduct/${productId}`,
+        `https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/product/deleteProduct/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`,

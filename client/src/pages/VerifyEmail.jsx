@@ -10,7 +10,7 @@ const VerifyEmail = () => {
 
     const VerifyEmail=async()=>{
         try {
-            const res=await axios.post(`http://localhost:8000/api/v1/user/verify`,{},{
+            const res=await axios.post(`https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/verify`,{},{
                 headers:{
                     Authorization:`Bearer ${token.token}`
                 }

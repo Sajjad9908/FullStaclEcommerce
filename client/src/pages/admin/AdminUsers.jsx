@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const AdminUsers = () => {
   const navigate=useNavigate()
   const [searchTerm, setSearchTerm] = useState('');
-   const api='http://localhost:8000/api/v1/user/allUsers'
+   const api='https://full-stacl-ecommerce-1nyae7crv.vercel.app/api/v1/user/allUsers'
   const [users,setUsers]=useState([]);
   const accessToken = localStorage.getItem('accessToken');
   const getAllUsers = async () => {

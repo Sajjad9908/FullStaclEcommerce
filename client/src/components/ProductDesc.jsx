@@ -13,7 +13,7 @@ const ProductDesc = ({product}) => {
   const token=localStorage.getItem('accessToken')
    const addToCart=async(productId)=>{
     try {
-      const res=await axios.post('http://localhost:8000/api/v1/cart/add',{productId},{
+      const res=await axios.post('/api/v1/cart/add',{productId},{
         headers:{
           Authorization:`Bearer ${token}`
         }
