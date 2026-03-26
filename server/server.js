@@ -9,11 +9,20 @@ import Productrouter from './Routes/ProductRoute.js';
 import cartRoute from './Routes/CartRoute.js';
 import orderRoute from './Routes/OrderRoute.js';
 
-app.use(cors({
-    origin:'https://full-stacl-ecommerce-vlbf.vercel.app/',
-    methods:['GET','POST','PUT','DELETE'],
-    credentials:true
-}));
+const allowedOrigins = [
+  'https://full-stacl-ecommerce-vlbf.vercel.app', // frontend (no trailing slash)
+  'http://localhost:5173',
+];
+app.use(
+  cors({
+    origin: (origin, cb) => {
+      if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+      return cb(new Error(`CORS blocked: ${origin}`));
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/api/v1/user',router2);
