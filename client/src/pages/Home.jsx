@@ -1,4 +1,4 @@
-import Features from '@/components/features'
+import Features from '@/components/Features'
 import Hero from '@/components/ui/Hero'
 import React from 'react'
 
