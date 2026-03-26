@@ -1,10 +1,12 @@
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
-import { text } from 'express';
 
 
 
 export const VerifyEmail=async(token,email)=>{
+
+    const frontendBaseUrl=(process.env.CLIENT_URL || 'https://full-stacl-ecommerce-vlbf.vercel.app').replace(/\/$/, '');
+    const verifyUrl=`${frontendBaseUrl}/verify/${token}`;
 
     const transporter=nodemailer.createTransport({
     service:'gmail',
@@ -18,7 +20,7 @@ const mailConfiguration={
     from:process.env.MAIL_USER,
     to:email,
     subject:'Email Verification',
-    text:`Please click the following link to verify your email: https://full-stacl-ecommerce.vercel.app/verify/${token}`
+    text:`Please click the following link to verify your email: ${verifyUrl}`
 }
 
 
