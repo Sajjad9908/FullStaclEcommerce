@@ -89,6 +89,22 @@ const Navbar = () => {
               <ul className='transition-all duration-75 w-full p-6 min-h-[calc(100vh-76px)] bg-pink-50 border-t border-pink-200 flex flex-col gap-3 items-start text-xl font-semibold'>
                 <Link to='/'><li>Home</li></Link>
                 <Link to='/products'><li>Products</li></Link>
+                {user && (
+                <>
+                  <Link to={`/profile/${user._id}`}><li>{user.firstName} {user.lastName}</li></Link>
+                  <img src={user.profilePic || ''} alt='Profile' className='h-8 w-8 rounded-full ml-2' />
+                 
+
+                </>
+                )}
+
+                {user ?
+                  <Button onClick={logoutHandler} className='bg-pink-500 hover:bg-pink-600 text-white mt-4 w-full'>Logout</Button>
+                  :
+                  <Button onClick={() => navigate('/login')} className='text-white cursor-pointer bg-gradient-to-tl from-blue-600 to-purple-600 mt-4 w-full'>Login</Button>
+                }
+
+
                 {admin && (
                   <>
                     <Link to={`/profile/${user._id}`}><li>{user.firstName} {user.lastName}</li></Link>

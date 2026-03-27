@@ -47,8 +47,8 @@ const Footer = () => {
           <div className='mb-6 md:mb-0'>
        <h3 className='text-lg font-semibold mb-4'>Stay in Loop</h3>
        <p className='text-sm'>Subscribe to our newsletter for the latest updates and offers.</p>
-         <div className='mt-4 flex'>
-            <input type="email" placeholder='Enter your email' className='px-4 text-white py-2 rounded focus:outline-none'/>
+         <div className='mt-4 flex min-w-[100px]'>
+            <input type="email" placeholder='Enter your email' className='px-4 text-white py-2 rounded focus:outline-none min-w-[80px]'/>
             <button className='bg-pink-500 text-white px-4 py-2 rounded-r-md hover:bg-pink-600 transition duration-300'>Subscribe</button>
          </div>
         </div>

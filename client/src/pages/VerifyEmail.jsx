@@ -5,7 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 const VerifyEmail = () => {
     const navigate=useNavigate()
     const token=useParams()
-    console.log(token)
     const [status,setStatus]=React.useState('Verifying...')
 
     const VerifyEmail=async()=>{
