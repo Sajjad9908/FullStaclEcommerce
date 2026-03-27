@@ -89,6 +89,12 @@ const Navbar = () => {
               <ul className='transition-all duration-75 w-full p-6 min-h-[calc(100vh-76px)] bg-pink-50 border-t border-pink-200 flex flex-col gap-3 items-start text-xl font-semibold'>
                 <Link to='/'><li>Home</li></Link>
                 <Link to='/products'><li>Products</li></Link>
+                <Link to='/cart' className='relative'>
+              <ShoppingCart />
+              <span className='bg-pink-500 rounded-full absolute -top-3 -right-5 px-2 mr-3'>
+                {cart?.items?.length || 0}
+              </span>
+            </Link>
                 {user && (
                 <>
                   <Link to={`/profile/${user._id}`}><li>{user.firstName} {user.lastName}</li></Link>
